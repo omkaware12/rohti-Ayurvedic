@@ -1,0 +1,111 @@
+:root {
+  --orange: #FA731A;
+  --green: #0F7771;
+
+  --cream: #FFF8E6;
+  --card-bg: #FFFFFF;
+
+  --soft-orange: #FFF1E8;
+  --soft-green: #E6F3F1;
+
+  --text-dark: #1f2937;
+  --text-muted: #6b7280;
+}
+
+/* ===== SECTION ===== */
+.why-ayurveda {
+  background: var(--cream);
+  padding: 80px 16px 140px; /* ⬅️ increased bottom padding */
+}
+
+
+/* ===== GRID ===== */
+.why-wrapper {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+/* ===== IMAGE ===== */
+.why-image {
+  display: flex;
+  justify-content: center;
+}
+
+.why-image img {
+  max-width: 480px;
+  width: 100%;
+}
+
+/* ===== CONTENT CARD ===== */
+.why-content {
+  background: var(--card-bg); /* ✅ white card like expertise */
+  padding: 36px;
+  border-radius: 18px; /* ✅ same radius */
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.08); /* ✅ same shadow */
+}
+
+.why-content h2 {
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text-dark);
+}
+
+.why-content h2 span {
+  color: var(--green);
+}
+
+.why-sub {
+  font-size: 15px;
+  color: var(--text-muted);
+  margin-bottom: 18px;
+}
+
+.why-content p {
+  font-size: 14.5px;
+  color: var(--text-dark);
+  margin-bottom: 14px;
+  line-height: 1.6;
+}
+
+.why-bold {
+  font-weight: 600;
+}
+
+.why-highlight {
+  margin-top: 16px;
+  font-weight: 600;
+  color: var(--green);
+}
+
+/* ===== LIST ===== */
+.why-content ul {
+  padding-left: 18px;
+  margin-bottom: 14px;
+}
+
+.why-content li {
+  font-size: 14.5px;
+  margin-bottom: 8px;
+  color: var(--text-dark);
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 900px) {
+  .why-wrapper {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .why-image img {
+    max-width: 320px;
+  }
+
+  .why-content {
+    padding: 28px;
+  }
+}
