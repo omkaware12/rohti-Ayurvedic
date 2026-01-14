@@ -42,10 +42,10 @@ const Hero = () => {
 
       {/* Features */}
       <div className="features">
-        <div className="feature-card">🌱 100% Herbal Ingredients</div>
-        <div className="feature-card">🏭 GMP Certified Facility</div>
-        <div className="feature-card">🧪 Quality Tested</div>
-        <div className="feature-card">📜 AYUSH Approved</div>
+        <div className="feature-card"> 100% Herbal Ingredients</div>
+        <div className="feature-card">GMP Certified Facility</div>
+        <div className="feature-card"> Quality Tested</div>
+        <div className="feature-card"> AYUSH Approved</div>
       </div>
     </section>
   );
