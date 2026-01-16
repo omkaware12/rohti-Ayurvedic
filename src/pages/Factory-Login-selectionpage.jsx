@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Factory,
   UserCog,
@@ -8,6 +9,7 @@ import Navbar from "../components/navbar";
 import "../styles/Factory-Login-selectionpage.css"
 
 export default function FactoryRoleSelect() {
+  const navigate = useNavigate();
   return (
     <div className="login-page">
       {/* Navbar */}
@@ -19,7 +21,7 @@ export default function FactoryRoleSelect() {
 
       {/* Header */}
       <div className="login-header">
-        <h1>Factory Login</h1>
+        <h1> <span className="login-header-span">Factory</span> Login</h1>
         <p>Select your role to continue</p>
       </div>
 
@@ -39,7 +41,7 @@ export default function FactoryRoleSelect() {
             <li>Reports & Analytics</li>
           </ul>
 
-          <button>Continue as Admin</button>
+          <button  onClick={() => navigate("/Admin-Login")}>Continue as Admin</button>
         </div>
 
         {/* Supervisor */}
@@ -56,7 +58,7 @@ export default function FactoryRoleSelect() {
             <li>Quality Checks</li>
           </ul>
 
-          <button>Continue as Supervisor</button>
+          <button onClick={() => navigate("/Supervisor-Login")}>Continue as Supervisor</button>
         </div>
 
         {/* Viewer */}
@@ -73,7 +75,7 @@ export default function FactoryRoleSelect() {
             <li>Audit Records</li>
           </ul>
 
-          <button>Continue as Viewer</button>
+          <button  onClick={() => navigate("/Viewer-Login")} >Continue as Viewer</button>
         </div>
       </div>
     </div>

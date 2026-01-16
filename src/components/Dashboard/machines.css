@@ -1,0 +1,102 @@
+/* ================= PAGE ================= */
+.machine-page {
+  min-height: 100vh;
+  background: #f4f7f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* ================= BACK ================= */
+.machine-back-btn {
+  position: absolute;
+  left: 40px;
+  top: 40px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  background: white;
+  font-weight: 500;
+  cursor: pointer;
+  color: #374151;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+.machine-back-btn:hover {
+  background: #f0fdfa;
+  border-color: #0f766e;
+  color: #0f766e;
+}
+
+/* ================= FORM ================= */
+.machine-form {
+  width: 540px;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 22px;
+  box-shadow: 0 24px 48px rgba(0,0,0,0.12);
+}
+
+.machine-form h2 {
+  margin-bottom: 28px;
+  color: #0f766e;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* ================= GROUP ================= */
+.machine-group {
+  margin-bottom: 22px;
+}
+
+.machine-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #374151;
+}
+
+/* ================= INPUTS ================= */
+.machine-group input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  font-size: 15px;
+}
+
+.machine-group input:focus {
+  outline: none;
+  border-color: #0f766e;
+}
+
+/* ================= CHECKBOX ================= */
+.machine-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.machine-checkbox input {
+  width: 18px;
+  height: 18px;
+}
+
+/* ================= SUBMIT ================= */
+.machine-submit-btn {
+  width: 100%;
+  margin-top: 28px;
+  padding: 16px;
+  border-radius: 14px;
+  border: none;
+  background: #0f766e;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.machine-submit-btn:hover {
+  background: #115e59;
+}

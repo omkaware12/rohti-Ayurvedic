@@ -1,0 +1,123 @@
+/* ================= PAGE ================= */
+.fuel-page {
+  min-height: 100vh;
+  background: #f4f7f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* ================= BACK ================= */
+.fuel-back-btn {
+  position: absolute;
+  left: 40px;
+  top: 40px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 16px;
+  background: white;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 500;
+  color: #374151;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.fuel-back-btn:hover {
+  background: #f0fdfa;
+  border-color: #0f766e;
+  color: #0f766e;
+}
+
+/* ================= CARD ================= */
+.fuel-card {
+  background: #ffffff;
+  width: 540px;
+  padding: 40px;
+  border-radius: 22px;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.12);
+}
+
+/* ================= HEADER ================= */
+.fuel-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #0f766e;
+  margin-bottom: 28px;
+}
+
+.fuel-header h2 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* ================= SECTION ================= */
+.fuel-section {
+  margin-bottom: 22px;
+}
+
+.fuel-section label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #374151;
+}
+
+/* ================= INPUT ================= */
+.fuel-section input {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 15px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+}
+
+.fuel-section input:focus {
+  outline: none;
+  border-color: #0f766e;
+}
+
+/* ================= TOGGLE ================= */
+.fuel-toggle {
+  display: flex;
+  gap: 14px;
+}
+
+.fuel-toggle button {
+  flex: 1;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  background: #f9fafb;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.fuel-toggle button.active {
+  background: #0f766e;
+  color: white;
+  border-color: #0f766e;
+}
+
+/* ================= SUBMIT ================= */
+.fuel-submit-btn {
+  width: 100%;
+  margin-top: 28px;
+  padding: 16px;
+  font-size: 16px;
+  border-radius: 14px;
+  border: none;
+  background: #0f766e;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.fuel-submit-btn:hover {
+  background: #115e59;
+}

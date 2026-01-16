@@ -1,0 +1,272 @@
+ 
+        .otp-page {
+          min-height: 100vh;
+          background: linear-gradient(
+            135deg,
+            #0f7771,
+            #148a83,
+            #1fa39c
+          );
+          color: #ffffff;
+          position: relative;
+          overflow: hidden;
+          padding: 0px 32px;
+          font-family: "Inter", sans-serif;
+          display: flex;
+          align-items: center;
+        }
+
+        .bg-decoration {
+          position: absolute;
+          width: 800px;
+          height: 800px;
+          background: rgba(255, 255, 255, 0.05);
+          border-radius: 50%;
+          top: -400px;
+          left: -200px;
+        }
+
+        .content-container {
+          max-width: 1200px;
+          width: 100%;
+          margin: 0 auto;
+          display: flex;
+          align-items: center;
+          gap: 60px;
+          position: relative;
+          z-index: 1;
+          padding: 40px 0;
+        }
+
+        .left-section {
+          flex: 1;
+        }
+
+        .back-button {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          background: rgba(255, 255, 255, 0.2);
+          color: white;
+          padding: 10px 20px;
+          border-radius: 8px;
+          text-decoration: none;
+          font-size: 14px;
+          margin-bottom: 40px;
+          transition: background 0.3s;
+          border: none;
+          cursor: pointer;
+        }
+
+        .back-button:hover {
+          background: rgba(255, 255, 255, 0.3);
+        }
+
+        .main-title {
+          font-size: 48px;
+          margin-bottom: 20px;
+          font-weight: 600;
+        }
+
+        .subtitle {
+          font-size: 18px;
+          margin-bottom: 30px;
+          opacity: 0.95;
+          line-height: 1.6;
+        }
+
+        .features-list {
+          list-style: none;
+          padding: 0;
+          margin: 0 0 40px 0;
+        }
+
+        .features-list li {
+          font-size: 16px;
+          margin-bottom: 15px;
+          padding-left: 25px;
+          position: relative;
+          opacity: 0.95;
+        }
+
+        .features-list li::before {
+          content: '•';
+          position: absolute;
+          left: 0;
+          font-size: 24px;
+          line-height: 16px;
+        }
+
+        .info-box {
+          background: rgba(255, 255, 255, 0.15);
+          padding: 15px 20px;
+          border-radius: 8px;
+          font-size: 14px;
+        }
+
+        .right-section {
+          flex: 0 0 450px;
+          background: white;
+          padding: 50px;
+          border-radius: 16px;
+          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .portal-title {
+          text-align: center;
+          font-size: 32px;
+          color: #1a1a1a;
+          margin-bottom: 15px;
+          font-weight: 600;
+        }
+
+        .portal-subtitle {
+          text-align: center;
+          color: #666;
+          margin-bottom: 40px;
+          font-size: 14px;
+          line-height: 1.6;
+        }
+
+        .portal-subtitle strong {
+          color: #148a83;
+          font-weight: 600;
+        }
+
+        .otp-form {
+          width: 100%;
+        }
+
+        .otp-inputs {
+          display: flex;
+          gap: 12px;
+          justify-content: center;
+          margin-bottom: 30px;
+        }
+
+        .otp-input {
+          width: 56px;
+          height: 56px;
+          text-align: center;
+          font-size: 24px;
+          font-weight: 600;
+          border: 2px solid #ddd;
+          border-radius: 8px;
+          transition: all 0.3s;
+          font-family: "Inter", sans-serif;
+          color: #1a1a1a;
+        }
+
+        .otp-input:focus {
+          outline: none;
+          border-color: #148a83;
+          background: #f8fffe;
+        }
+
+        .otp-input:not(:placeholder-shown) {
+          border-color: #148a83;
+        }
+
+        .submit-button {
+          width: 100%;
+          padding: 16px;
+          background: #1a1a1a;
+          color: white;
+          border: none;
+          border-radius: 8px;
+          font-size: 16px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.3s;
+          font-family: "Inter", sans-serif;
+        }
+
+        .submit-button:hover:not(:disabled) {
+          background: #333;
+        }
+
+        .submit-button:disabled {
+          background: #ccc;
+          cursor: not-allowed;
+        }
+
+        .resend-section {
+          margin-top: 25px;
+          text-align: center;
+        }
+
+        .resend-text {
+          font-size: 14px;
+          color: #666;
+        }
+
+        .resend-button {
+          background: none;
+          border: none;
+          color: #148a83;
+          font-weight: 600;
+          cursor: pointer;
+          font-size: 14px;
+          text-decoration: none;
+          padding: 0;
+          font-family: "Inter", sans-serif;
+        }
+
+        .resend-button:hover {
+          text-decoration: underline;
+        }
+
+        @media (max-width: 968px) {
+          .content-container {
+            flex-direction: column;
+            gap: 40px;
+          }
+
+          .left-section {
+            text-align: center;
+          }
+
+          .back-button {
+            margin-bottom: 30px;
+          }
+
+          .right-section {
+            flex: 0 0 auto;
+            width: 100%;
+            max-width: 450px;
+          }
+
+          .main-title {
+            font-size: 36px;
+          }
+
+          .features-list {
+            text-align: left;
+            display: inline-block;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .otp-page {
+            padding: 0 16px;
+          }
+
+          .right-section {
+            padding: 30px 25px;
+          }
+
+          .main-title {
+            font-size: 32px;
+          }
+
+          .otp-inputs {
+            gap: 8px;
+          }
+
+          .otp-input {
+            width: 48px;
+            height: 48px;
+            font-size: 20px;
+          }
+        }
+      

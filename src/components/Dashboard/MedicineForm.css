@@ -1,0 +1,94 @@
+/* ================= PAGE ================= */
+.medicine-page {
+  min-height: 100vh;
+  background: #f4f7f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* ================= BACK ================= */
+.medicine-back-btn {
+  position: absolute;
+  left: 40px;
+  top: 40px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  background: white;
+  font-weight: 500;
+  cursor: pointer;
+  color: #374151;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+.medicine-back-btn:hover {
+  background: #f0fdfa;
+  border-color: #0f766e;
+  color: #0f766e;
+}
+
+/* ================= FORM ================= */
+.medicine-form {
+  width: 560px;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 22px;
+  box-shadow: 0 24px 48px rgba(0,0,0,0.12);
+}
+
+.medicine-form h2 {
+  margin-bottom: 28px;
+  color: #0f766e;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* ================= GROUP ================= */
+.medicine-group {
+  margin-bottom: 22px;
+}
+
+.medicine-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #374151;
+}
+
+/* ================= INPUTS ================= */
+.medicine-group input,
+.medicine-group select,
+.medicine-group textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  font-size: 15px;
+}
+
+.medicine-group input:focus,
+.medicine-group select:focus,
+.medicine-group textarea:focus {
+  outline: none;
+  border-color: #0f766e;
+}
+
+/* ================= SUBMIT ================= */
+.medicine-submit-btn {
+  width: 100%;
+  margin-top: 28px;
+  padding: 16px;
+  border-radius: 14px;
+  border: none;
+  background: #0f766e;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.medicine-submit-btn:hover {
+  background: #115e59;
+}
