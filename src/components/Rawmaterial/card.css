@@ -1,0 +1,17 @@
+.card-container {
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  width: 260px;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}

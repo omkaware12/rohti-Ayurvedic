@@ -1,0 +1,79 @@
+.form-page {
+  padding: 40px;
+  background: #f5f7f7;
+  min-height: 100vh;
+}
+
+.back-btn {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.form-card {
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.form-card h2 {
+  margin-bottom: 20px;
+  color: #0f766e;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.submit-btn {
+  width: 100%;
+  margin-top: 25px;
+  padding: 14px;
+  background: #0f766e;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+}
+
+.bulk-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr auto;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.add-btn {
+  margin-top: 15px;
+  background: #e6f4f1;
+  color: #0f766e;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  width: 100%;
+}
+
+.remove-btn {
+  background: #fee2e2;
+  border: none;
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+}

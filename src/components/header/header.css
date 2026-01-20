@@ -1,88 +1,70 @@
-/* header.css */
 .header {
-  height: 72px;
+  height: 70px;
   background: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 32px;
+  padding: 0 24px;
   border-bottom: 1px solid #e5e7eb;
 }
 
-
-
-/* Search */
-.header-search {
+/* SEARCH */
+.header-left {
   display: flex;
   align-items: center;
   gap: 10px;
   background: #f1f5f9;
   padding: 10px 14px;
-  border-radius: 8px;
-  width: 260px;
+  border-radius: 10px;
+  width: 320px;
 }
 
-.header-search-input {
+.header-left input {
   border: none;
   outline: none;
   background: transparent;
   width: 100%;
 }
 
-/* Right */
+/* RIGHT SIDE */
 .header-right {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 20px;
 }
 
-.header-notification {
-  position: relative;
-  cursor: pointer;
-}
-
-.header-notification-badge {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 8px;
-  height: 8px;
-  background: #ef4444;
-  border-radius: 50%;
-}
-
-/* Profile */
-.header-profile {
+/* PROFILE */
+.profile {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   cursor: pointer;
 }
 
-.header-profile-avatar {
+.avatar {
   width: 36px;
   height: 36px;
-  background: #0f7771;
+  background: #0f766e;
   color: white;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  font-weight: 600;
+  font-weight: bold;
 }
 
-.header-profile-info {
+.profile-info {
   display: flex;
   flex-direction: column;
-  line-height: 1.2;
+  line-height: 1.1;
 }
 
-.header-profile-name {
-  font-weight: 600;
+.name {
   font-size: 14px;
+  font-weight: 600;
 }
 
-.header-profile-role {
+.role {
   font-size: 12px;
-  color: #6b7280;
+  color: gray;
 }

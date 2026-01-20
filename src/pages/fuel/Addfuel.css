@@ -1,0 +1,107 @@
+/* =========================
+   FUEL FORM PAGE
+========================= */
+
+.fuel-form-page {
+  min-height: 100vh;
+  background: #f8fafc;
+  padding: 40px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+}
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.fuel-back-btn {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  background: transparent;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #0f766e;
+}
+
+.fuel-back-btn:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   FORM CARD
+========================= */
+
+.fuel-form-card {
+  width: 100%;
+  max-width: 460px;
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+.fuel-form-card h2 {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 24px;
+  color: #0f172a;
+}
+
+/* =========================
+   FORM GROUP
+========================= */
+
+.fuel-form-group {
+  margin-bottom: 18px;
+}
+
+.fuel-form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #334155;
+}
+
+.fuel-form-group input,
+.fuel-form-group select {
+  width: 100%;
+  padding: 11px 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.fuel-form-group input:focus,
+.fuel-form-group select:focus {
+  border-color: #0f766e;
+  box-shadow: 0 0 0 2px rgba(15, 118, 110, 0.15);
+}
+
+/* =========================
+   SUBMIT BUTTON
+========================= */
+
+.fuel-submit-btn {
+  width: 100%;
+  margin-top: 8px;
+  padding: 12px;
+  background: #0f766e;
+  border: none;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.fuel-submit-btn:hover {
+  background: #115e59;
+}
