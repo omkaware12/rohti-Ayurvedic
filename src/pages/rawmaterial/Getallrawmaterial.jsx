@@ -1,62 +1,82 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
 import "../../styles/table.css";
+import "../../styles/modal.css";
 
 const ITEMS_PER_PAGE = 10;
 
-// ✅ Dummy data
-const DUMMY_RAW_MATERIALS = Array.from({ length: 35 }, (_, i) => ({
-  rawMaterialName: `Raw Material ${i + 1}`,
-  rawMaterialType: "HERB",
-  rawMaterialUnit: "KG",
+/* 🔹 Dummy transaction material data */
+const initialTransactions = Array.from({ length: 22 }, (_, i) => ({
+  id: i + 1,
+  materialName: `Raw Material ${i + 1}`,
+  category: "HERB",
+  quantity: 100 + i * 5,
+  unit: "KG",
+  supplier: "Ayurveda Supplier",
+  description: "Used for manufacturing classical formulations",
 }));
 
-const AllRawMaterial = () => {
+const GetAllTransactionMaterial = () => {
   const navigate = useNavigate();
+
+  const [transactions, setTransactions] = useState(initialTransactions);
   const [currentPage, setCurrentPage] = useState(1);
+  const [selectedMaterial, setSelectedMaterial] = useState(null);
 
-  const totalPages = Math.ceil(
-    DUMMY_RAW_MATERIALS.length / ITEMS_PER_PAGE
-  );
-
+  const totalPages = Math.ceil(transactions.length / ITEMS_PER_PAGE);
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-  const currentData = DUMMY_RAW_MATERIALS.slice(
+
+  const currentData = transactions.slice(
     startIndex,
     startIndex + ITEMS_PER_PAGE
   );
 
+  /* 🔥 DELETE MATERIAL */
+  const handleDelete = () => {
+    if (!window.confirm("Are you sure you want to delete this material?"))
+      return;
+
+    setTransactions((prev) =>
+      prev.filter((m) => m.id !== selectedMaterial.id)
+    );
+
+    setSelectedMaterial(null);
+  };
+
   return (
     <div className="table-page">
-      {/* HEADER */}
-      <div className="table-header">
-        <button className="back-btn" onClick={() => navigate(-1)}>
-          <ArrowLeft size={18} />
-          Back
-        </button>
+      <button className="back-btn" onClick={() => navigate(-1)}>
+        ← Back
+      </button>
 
-        <h2 className="page-title">All Raw Materials</h2>
-      </div>
+      <h2 className="page-title">All Transaction Materials</h2>
 
-      {/* TABLE */}
       <div className="table-container">
         <table>
           <thead>
             <tr>
               <th>#</th>
-              <th>Raw Material Name</th>
-              <th>Type</th>
+              <th>Material Name</th>
+              <th>Category</th>
+              <th>Quantity</th>
               <th>Unit</th>
+              <th>Supplier</th>
             </tr>
           </thead>
 
           <tbody>
             {currentData.map((item, index) => (
-              <tr key={startIndex + index}>
+              <tr
+                key={item.id}
+                className="clickable-row"
+                onClick={() => setSelectedMaterial(item)}
+              >
                 <td>{startIndex + index + 1}</td>
-                <td>{item.rawMaterialName}</td>
-                <td>{item.rawMaterialType}</td>
-                <td>{item.rawMaterialUnit}</td>
+                <td>{item.materialName}</td>
+                <td>{item.category}</td>
+                <td>{item.quantity}</td>
+                <td>{item.unit}</td>
+                <td>{item.supplier}</td>
               </tr>
             ))}
           </tbody>
@@ -83,8 +103,60 @@ const AllRawMaterial = () => {
           Next
         </button>
       </div>
+
+      {/* 🔥 MATERIAL DETAILS MODAL */}
+      {selectedMaterial && (
+        <div className="modal-overlay">
+          <div className="modal-card">
+            <button
+              className="modal-close"
+              onClick={() => setSelectedMaterial(null)}
+            >
+              ✕
+            </button>
+
+            <h3>{selectedMaterial.materialName}</h3>
+
+            <div className="modal-details">
+              <p>
+                <strong>Category:</strong> {selectedMaterial.category}
+              </p>
+              <p>
+                <strong>Quantity:</strong>{" "}
+                {selectedMaterial.quantity} {selectedMaterial.unit}
+              </p>
+              <p>
+                <strong>Supplier:</strong> {selectedMaterial.supplier}
+              </p>
+              <p>
+                <strong>Description:</strong>
+                <br />
+                {selectedMaterial.description}
+              </p>
+            </div>
+
+            {/* ACTION BUTTONS */}
+            <div className="modal-actions">
+              <button
+                className="btn update"
+                onClick={() =>
+                  navigate(
+                    `/dashboard/rawmaterial/update/${selectedMaterial.id}`
+                  )
+                }
+              >
+                Update
+              </button>
+
+              <button className="btn delete" onClick={handleDelete}>
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
 
-export default AllRawMaterial;
+export default GetAllTransactionMaterial;

@@ -1,0 +1,87 @@
+/* Page wrapper */
+.form-page {
+  min-height: 100vh;
+  background-color: #f4f6f8;
+  padding: 20px;
+}
+
+/* Back button */
+.back-btn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #2563eb;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.back-btn:hover {
+  text-decoration: underline;
+}
+
+/* Form card */
+.form-card {
+  max-width: 500px;
+  margin: auto;
+  background: #ffffff;
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Heading */
+.form-card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1f2937;
+}
+
+/* Form group */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #374151;
+}
+
+/* Inputs & selects */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 10px 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #2563eb;
+}
+
+/* Submit button */
+.submit-btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background-color: #2563eb;
+  color: #ffffff;
+  transition: background-color 0.2s ease;
+}
+
+.submit-btn:hover {
+  background-color: #1e40af;
+}

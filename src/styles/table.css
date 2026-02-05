@@ -78,6 +78,15 @@ tbody tr:hover {
   background: #f9fafb;
 }
 
+/* CLICKABLE ROW */
+.clickable-row {
+  cursor: pointer;
+}
+
+.clickable-row:hover {
+  background: #f0fdfa;
+}
+
 /* PAGINATION */
 .pagination {
   margin-top: 20px;

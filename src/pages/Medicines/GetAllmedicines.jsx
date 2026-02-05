@@ -5,6 +5,7 @@ import "../../styles/modal.css";
 
 const ITEMS_PER_PAGE = 10;
 
+/* ---------- DUMMY MEDICINES ---------- */
 const initialMedicines = Array.from({ length: 25 }, (_, i) => ({
   id: i + 1,
   medicineName: `Medicine ${i + 1}`,
@@ -15,6 +16,25 @@ const initialMedicines = Array.from({ length: 25 }, (_, i) => ({
   description:
     "Classical Ayurvedic formulation for immunity and vitality.",
 }));
+
+/* ---------- DUMMY RAW MATERIAL DATA ---------- */
+const rawMaterialMap = {
+  1: [
+    { rawMaterialId: 1, standardQuantity: 0.001, unit: "KG" },
+    { rawMaterialId: 2, standardQuantity: 3, unit: "GM" },
+    { rawMaterialId: 3, standardQuantity: 2.5, unit: "GM" },
+  ],
+  2: [{ rawMaterialId: 4, standardQuantity: 500, unit: "MG" }],
+};
+
+/* ---------- DUMMY MACHINE DATA ---------- */
+const machineMap = {
+  1: [
+    { machineId: 1, machineName: "Mixer", usageTime: 2.5 },
+    { machineId: 2, machineName: "Dryer", usageTime: 1.5 },
+  ],
+  2: [{ machineId: 3, machineName: "Tablet Press", usageTime: 3 }],
+};
 
 const GetAllMedicines = () => {
   const navigate = useNavigate();
@@ -31,6 +51,7 @@ const GetAllMedicines = () => {
     startIndex + ITEMS_PER_PAGE
   );
 
+  /* ---------- DELETE ---------- */
   const handleDelete = () => {
     if (!window.confirm("Are you sure you want to delete this medicine?"))
       return;
@@ -38,8 +59,27 @@ const GetAllMedicines = () => {
     setMedicines((prev) =>
       prev.filter((m) => m.id !== selectedMedicine.id)
     );
-
     setSelectedMedicine(null);
+  };
+
+  /* ---------- SHOW RAW MATERIALS ---------- */
+  const handleShowRawMaterials = () => {
+    const materials = rawMaterialMap[selectedMedicine.id] || [];
+    console.log("Attached Raw Materials:", materials);
+
+    if (materials.length === 0) {
+      alert("No raw materials attached to this medicine.");
+    }
+  };
+
+  /* ---------- SHOW MACHINES ---------- */
+  const handleShowMachines = () => {
+    const machines = machineMap[selectedMedicine.id] || [];
+    console.log("Attached Machines:", machines);
+
+    if (machines.length === 0) {
+      alert("No machines attached to this medicine.");
+    }
   };
 
   return (
@@ -50,6 +90,7 @@ const GetAllMedicines = () => {
 
       <h2 className="page-title">All Medicines</h2>
 
+      {/* ---------- TABLE ---------- */}
       <div className="table-container">
         <table>
           <thead>
@@ -62,7 +103,6 @@ const GetAllMedicines = () => {
               <th>Unit</th>
             </tr>
           </thead>
-
           <tbody>
             {currentData.map((item, index) => (
               <tr
@@ -82,28 +122,7 @@ const GetAllMedicines = () => {
         </table>
       </div>
 
-      {/* Pagination */}
-      <div className="pagination">
-        <button
-          disabled={currentPage === 1}
-          onClick={() => setCurrentPage((p) => p - 1)}
-        >
-          Prev
-        </button>
-
-        <span>
-          Page {currentPage} of {totalPages}
-        </span>
-
-        <button
-          disabled={currentPage === totalPages}
-          onClick={() => setCurrentPage((p) => p + 1)}
-        >
-          Next
-        </button>
-      </div>
-
-      {/* 🔥 MEDICINE DETAILS MODAL */}
+      {/* ================= MODAL ================= */}
       {selectedMedicine && (
         <div className="modal-overlay">
           <div className="modal-card">
@@ -117,35 +136,104 @@ const GetAllMedicines = () => {
             <h3>{selectedMedicine.medicineName}</h3>
 
             <div className="modal-details">
-              <p><strong>Type:</strong> {selectedMedicine.medicineType}</p>
-              <p><strong>Form:</strong> {selectedMedicine.medicineForm}</p>
+              <p>
+                <strong>Type:</strong> {selectedMedicine.medicineType}
+              </p>
+              <p>
+                <strong>Form:</strong> {selectedMedicine.medicineForm}
+              </p>
               <p>
                 <strong>Strength:</strong>{" "}
                 {selectedMedicine.strengthValue}{" "}
                 {selectedMedicine.medicineUnit}
               </p>
               <p>
-                <strong>Description:</strong><br />
+                <strong>Description:</strong>
+                <br />
                 {selectedMedicine.description}
               </p>
             </div>
 
-            {/* ACTION BUTTONS */}
+            {/* ===== ACTION BUTTONS ===== */}
             <div className="modal-actions">
-              <button
-                className="btn update"
-                onClick={() =>
-                  navigate(
-                    `/dashboard/medicines/update/${selectedMedicine.id}`
-                  )
-                }
-              >
-                Update
-              </button>
+              {/* Row 1 */}
+              <div className="action-row">
+                <button
+                  className="btn update"
+                  onClick={() =>
+                    navigate(
+                      `/dashboard/medicines/update/${selectedMedicine.id}`
+                    )
+                  }
+                >
+                  Update
+                </button>
+                <button className="btn delete" onClick={handleDelete}>
+                  Delete
+                </button>
+              </div>
 
-              <button className="btn delete" onClick={handleDelete}>
-                Delete
-              </button>
+              {/* Row 2 */}
+              <div className="action-row center">
+                <button
+                  className="btn workspace"
+                  onClick={() =>
+                    navigate(
+                      `/dashboard/medicines/workspace/${selectedMedicine.id}`
+                    )
+                  }
+                >
+                  Create Workspace
+                </button>
+              </div>
+
+              {/* Row 3 */}
+              <div className="action-row center">
+                <button
+                  className="btn raw-material"
+                  onClick={() =>
+                    navigate(
+                      `/dashboard/medicines/${selectedMedicine.id}/add-raw-material`
+                    )
+                  }
+                >
+                  Add Raw Material
+                </button>
+              </div>
+
+              {/* Row 4 */}
+              <div className="action-row center">
+                <button
+                  className="btn raw-material"
+                  onClick={handleShowRawMaterials}
+                >
+                  Show Attached Raw Materials
+                </button>
+              </div>
+
+              {/* Row 5 */}
+              <div className="action-row center">
+                <button
+                  className="btn workspace"
+                  onClick={() =>
+                    navigate(
+                      `/dashboard/medicines/${selectedMedicine.id}/add-machines`
+                    )
+                  }
+                >
+                  Add Machines
+                </button>
+              </div>
+
+              {/* Row 6 */}
+              <div className="action-row center">
+                <button
+                  className="btn workspace"
+                  onClick={handleShowMachines}
+                >
+                  Show Attached Machines
+                </button>
+              </div>
             </div>
           </div>
         </div>

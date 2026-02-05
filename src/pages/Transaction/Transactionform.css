@@ -1,0 +1,89 @@
+/* Page wrapper */
+.form-page {
+  min-height: 100vh;
+  background: #f6f8fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Back button */
+.back-btn {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  background: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Card */
+.form-card {
+  width: 420px;
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Title */
+.form-title {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #0f766e;
+}
+
+/* Subtitle */
+.form-subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 24px;
+}
+
+/* Form group */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #374151;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  outline: none;
+}
+
+.form-group input:focus {
+  border-color: #0f766e;
+}
+
+/* Submit button */
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background: #0f766e;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.submit-btn:hover {
+  background: #115e59;
+}

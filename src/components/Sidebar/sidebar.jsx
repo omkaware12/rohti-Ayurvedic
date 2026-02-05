@@ -8,6 +8,7 @@ import {
   Repeat,
   Archive,
   PlusSquare,
+  Workflow
 } from "lucide-react";
 import "./sidebar.css";
 
@@ -41,13 +42,14 @@ const Sidebar = () => {
         <span>Raw Material</span>
       </NavLink>
 
-      <NavLink
-        to="/dashboard/rawmaterial-transaction"
-        className="sidebar-link"
-      >
-        <Repeat size={18} />
-        <span>Raw Material Transaction</span>
-      </NavLink>
+   <NavLink
+  to="/dashboard/rawmaterial/transaction"
+  className="sidebar-link"
+>
+  <Repeat size={18} />
+  <span>Raw Material Transaction</span>
+</NavLink>
+
 
       <NavLink
         to="/dashboard/rawmaterial-inventory"
@@ -63,6 +65,13 @@ const Sidebar = () => {
       >
         <PlusSquare size={18} />
         <span>Add Raw Material to Medicines</span>
+      </NavLink>
+      <NavLink
+        to="/dashboard/medicines-process"
+        className="sidebar-link"
+      >
+        <Workflow size={18} />
+        <span>Process steps</span>
       </NavLink>
     </div>
   );

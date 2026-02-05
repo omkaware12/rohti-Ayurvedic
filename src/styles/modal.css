@@ -1,3 +1,4 @@
+/* OVERLAY */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -8,6 +9,7 @@
   z-index: 999;
 }
 
+/* CARD */
 .modal-card {
   background: #ffffff;
   width: 420px;
@@ -18,6 +20,7 @@
   animation: scaleIn 0.2s ease;
 }
 
+/* CLOSE */
 .modal-close {
   position: absolute;
   top: 12px;
@@ -28,17 +31,88 @@
   cursor: pointer;
 }
 
+/* TITLE */
 .modal-card h3 {
   margin-bottom: 16px;
   color: #0f766e;
 }
 
+/* DETAILS */
 .modal-details p {
   margin-bottom: 10px;
   font-size: 14px;
   color: #374151;
 }
 
+/* ACTIONS (🔥 FIXED LAYOUT) */
+.modal-actions {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.action-row {
+  display: flex;
+  gap: 12px;
+}
+
+.action-row.center {
+  justify-content: center;
+}
+
+/* BUTTONS */
+.btn {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  min-width: 140px;
+}
+
+/* Update */
+.btn.update {
+  background: #0f766e;
+  color: white;
+}
+
+.btn.update:hover {
+  background: #115e59;
+}
+
+/* Delete */
+.btn.delete {
+  background: #dc2626;
+  color: white;
+}
+
+.btn.delete:hover {
+  background: #b91c1c;
+}
+
+/* Workspace */
+.btn.workspace {
+  background: #16a34a;
+  color: white;
+}
+
+.btn.workspace:hover {
+  background: #15803d;
+}
+
+/* Add Raw Material */
+.btn.raw-material {
+  background: #4f46e5;
+  color: white;
+}
+
+.btn.raw-material:hover {
+  background: #4338ca;
+}
+
+/* ANIMATION */
 @keyframes scaleIn {
   from {
     transform: scale(0.9);
@@ -48,47 +122,4 @@
     transform: scale(1);
     opacity: 1;
   }
-}
-
-/* clickable row */
-.clickable-row {
-  cursor: pointer;
-}
-
-.clickable-row:hover {
-  background: #f0fdfa;
-}
-.modal-actions {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-}
-
-.btn {
-  flex: 1;
-  padding: 10px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 14px;
-}
-
-.btn.update {
-  background: #0f766e;
-  color: white;
-  margin-right: 10px;
-}
-
-.btn.update:hover {
-  background: #115e59;
-}
-
-.btn.delete {
-  background: #dc2626;
-  color: white;
-}
-
-.btn.delete:hover {
-  background: #b91c1c;
 }
